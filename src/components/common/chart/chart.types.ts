@@ -6,6 +6,11 @@ export interface IChart {
   series: ISeries[];
   legend: ILegend;
 }
+export interface IPieChart {
+  type: "pie" | "donut";
+  data: IPoint[];
+  colors: string[];
+}
 
 export interface ITitle {
   text: string;

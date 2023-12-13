@@ -19,8 +19,14 @@
       </ChartLayout>
     </div>
     <div>
-      <StatChart :options="totalStatChartOptions"></StatChart>
-      <StatChart :options="maleFemaleStatChartOptions"></StatChart>
+      <div class="pie-wrapper">
+        <StatChart :options="totalStatChartOptions"></StatChart>
+      </div>
+
+      <div class="pie-wrapper">
+        <StatChart :options="maleFemaleStatChartOptions"></StatChart>
+        <pie :options="pieChartOptions" />
+      </div>
     </div>
   </section>
 </template>
@@ -28,10 +34,11 @@
 <script setup lang="ts">
   import { computed, ref } from "vue";
   import { useStore } from "vuex";
+  import Pie from "../common/chart/pie/Pie.vue";
   import Chart from "../common/chart/Chart.vue";
   import ChartLayout from "../common/chart-layout/ChartLayout.vue";
   import StatChart from "../common/stat-chart/StatChart.vue";
-  import { IChart, IPoint } from "../common/chart/chart.types";
+  import { IChart, IPieChart, IPoint } from "../common/chart/chart.types";
   import { IStatChart } from "../common/stat-chart/StatChart.types";
 
   const store = useStore();
@@ -46,6 +53,15 @@
 
   const data = computed<{ [key: string]: IPoint[] | number }>(() => store.getters["worldPopulation"]);
   const lastYear = computed(() => (data.value?.lastYear || "").toString());
+
+  const pieChartOptions = computed<IPieChart>(() => ({
+    type: "pie",
+    data: [
+      { name: "Female", value: data.value.lastYearFemaleTotal as number },
+      { name: "Male", value: data.value.lastYearMaleTotal as number },
+    ],
+    colors: ["#33afdf", "#DF0404"],
+  }));
   const totalChartOptions = computed<IChart>(
     () =>
       ({
@@ -81,18 +97,18 @@
         yAxis: [{ type: "value", name: "y", label: "Population" }],
         series: [
           {
+            data: data.value.male,
+            type: totalPopulationMaleFemaleChartType.value,
+            xAxisName: "x",
+            yAxisName: "y",
+            color: "#33afdf",
+          },
+          {
             data: data.value.female,
             type: totalPopulationMaleFemaleChartType.value,
             xAxisName: "x",
             yAxisName: "y",
             color: "#DF0404",
-          },
-          {
-            data: data.value.male,
-            type: totalPopulationMaleFemaleChartType.value,
-            xAxisName: "x",
-            yAxisName: "y",
-            color: "#079B54",
           },
         ],
         legend: {
@@ -143,5 +159,14 @@
       display: flex;
       justify-content: space-between;
     }
+  }
+  .pie-wrapper {
+    width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

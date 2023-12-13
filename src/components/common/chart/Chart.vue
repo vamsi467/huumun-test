@@ -35,10 +35,10 @@
   });
 </script>
 
-<style>
+<style scoped>
   .chart-container {
     width: 100%;
-    height: 400px; /* Or any desired height */
+    height: 360px;
   }
   .chart-tooltip {
     position: absolute;

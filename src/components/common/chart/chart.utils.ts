@@ -377,7 +377,7 @@ function renderAxes(
         .attr("class", "axis-name")
         .attr("text-anchor", "end")
         .attr("x", width / 2)
-        .attr("y", "2rem")
+        .attr("y", "2.5rem")
         .attr("fill", "#000")
         .text(chartOptions.xAxis[index].label);
     } else {
@@ -388,7 +388,7 @@ function renderAxes(
         .attr("class", "axis-name")
         .attr("text-anchor", "end")
         .attr("x", width / 2)
-        .attr("y", "2rem")
+        .attr("y", "2.5rem")
         .attr("fill", "#000")
         .text(chartOptions.xAxis[index].label);
     }
@@ -402,10 +402,11 @@ function renderAxes(
         .append("text")
         .attr("class", "axis-name")
         .attr("text-anchor", "end")
-        .attr("x", width / 2)
-        .attr("y", "2rem")
+        .attr("x", -(height / 2))
+        .attr("y", "-2.5rem")
+        .attr("transform", "rotate(-90)")
         .attr("fill", "#000")
-        .text(chartOptions.xAxis[index].label);
+        .text(chartOptions.yAxis[index].label);
     } else {
       g.append("g")
         .attr("transform", `translate(0,${0})`)
@@ -414,7 +415,7 @@ function renderAxes(
         .attr("class", "axis-name")
         .attr("text-anchor", "end")
         .attr("x", -(height / 2))
-        .attr("y", "-2rem")
+        .attr("y", "-2.5rem")
         .attr("transform", "rotate(-90)")
         .attr("fill", "#000")
         .text(chartOptions.yAxis[index].label);
@@ -435,7 +436,7 @@ export function useChart(options: ComputedRef<IChart>, chartContainerRef: Ref<nu
   const { showTooltip, hideTooltip, isVisible, tooltipContent, tooltipPosition } = useTooltip();
   const { legendItems } = useLegend(options.value.legend, ref(options.value.series));
   onMounted(() => {
-    console.log(options);
+   
     createChart();
     updateChart();
     setupResizeObserver();
@@ -446,7 +447,7 @@ export function useChart(options: ComputedRef<IChart>, chartContainerRef: Ref<nu
   });
 
   watch(options, () => {
-    console.log(options);
+    
     updateChart();
   });
 
