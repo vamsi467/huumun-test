@@ -38,7 +38,7 @@
 <style>
   .chart-container {
     width: 100%;
-    height: 600px; /* Or any desired height */
+    height: 400px; /* Or any desired height */
   }
   .chart-tooltip {
     position: absolute;
@@ -48,5 +48,8 @@
     border-radius: 5px;
     pointer-events: none;
     opacity: 0.9;
+  }
+  .axis-name {
+    font-size: 1rem;
   }
 </style>
