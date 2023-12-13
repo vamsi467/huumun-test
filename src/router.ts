@@ -4,9 +4,9 @@ import { RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    alias: "/Chat",
-    name: "Chat",
-    component: () => import("@/pages/Chat.vue"),
+    alias: "/dashboard",
+    name: "dashboard",
+    component: () => import("@/pages/Dashboard.vue"),
   },
 ];
 
