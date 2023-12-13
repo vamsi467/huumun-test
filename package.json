@@ -18,6 +18,11 @@
     "e2e:test": "yarn e2e:run && yarn e2e:run-ct"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
     "axios": "^0.24.0",
     "d3": "^7.8.5",
     "inversify": "^6.0.1",
@@ -30,6 +35,7 @@
   "devDependencies": {
     "@cypress/vite-dev-server": "^2.2.0",
     "@cypress/vue": "^3.0.3",
+    "@types/d3": "^7.4.3",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
@@ -45,8 +51,7 @@
     "sass": "^1.43.4",
     "typescript": "^4.3.2",
     "vite": "^2.5.1",
-    "vue-tsc": "^0.2.2",
-    "@types/d3": "^7.4.3"
+    "vue-tsc": "^0.2.2"
   },
   "browserslist": [
     "> 1%",
