@@ -29,6 +29,9 @@
 </script>
 <style scoped lang="scss">
   .stat-chart {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin: 1rem;
+    padding: 1rem;
     &__items {
       display: flex;
     }

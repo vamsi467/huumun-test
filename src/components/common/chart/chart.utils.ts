@@ -110,6 +110,7 @@ function drawLineSeries(
     })
     .attr("cy", (d) => yScale(d.value as any) ?? 0)
     .attr("r", 5)
+    .attr("fill", series.color)
     .on("mouseover", (event, d) => {
       const title = d.name instanceof Date ? d.name.toLocaleDateString() : d.name.toString();
       showTooltip(title, d.value, event.pageX, event.pageY);
@@ -213,6 +214,7 @@ function drawAreaSeries(
     })
     .attr("cy", (d) => yScale(d.value as any) ?? 0)
     .attr("r", 5)
+    .attr("fill", series.color)
     .on("mouseover", (event, d) => {
       const title = d.name instanceof Date ? d.name.toLocaleDateString() : d.name.toString();
       showTooltip(title, d.value, event.pageX, event.pageY);
