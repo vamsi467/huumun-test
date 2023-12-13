@@ -11,6 +11,7 @@ interface IFetchState {
 interface IDashboardParams {
   year_gte: number;
   year_lte: number;
+  country_name: string;
 }
 
 export const useCountryPopulation = () => {
@@ -22,7 +23,7 @@ export const useCountryPopulation = () => {
     error: null,
   } as IFetchState);
 
-  const fetch = async ({ year_gte, year_lte }: IDashboardParams) => {
+  const fetch = async ({ year_gte, year_lte, country_name }: IDashboardParams) => {
     fetchState.loading = true;
     try {
       const params: IListParams = {
@@ -31,6 +32,9 @@ export const useCountryPopulation = () => {
         year_gte,
         year_lte,
       };
+      if (country_name !== "All") {
+        params.country_name = country_name;
+      }
       const res = await api.list(params);
 
       dispatch("setPopulation", res.data);
