@@ -1,145 +1,84 @@
-# Vue3 + Vite + Typescript Starter
+# World Population Dashboard
 
-_Simple starter template for developing Vue 3 app with some often used features_
+This is a simple world population dashboard developed using Vue 3, Vite, and TypeScript. It showcases population data through interactive visualizations and provides insights into global demographics.
 
-💻 Vue 3 | Vite | Typescript | Vuex | ESLint | Prettier | Axios.
+## Description
 
+"World Population Dashboard" is a web application designed to visualize population data across the globe. The application is built with Vue 3 for reactive UI, Vite for an optimized development experience, and TypeScript for type-safe code. It uses D3.js for data-driven visualizations and Axios for data fetching.
 
-![Screen Starter][screen]
+## Features
 
+- Interactive world population visualizations.
+- Responsive design for desktop and mobile views.
+- Mock JSON server for simulating backend data.
+- Integration of Font Awesome icons for enhanced UI.
+- Comprehensive end-to-end testing with Cypress.
 
+## Getting Started
 
----
+### Prerequisites
 
+- Ensure you have [Node.js](https://nodejs.org/) installed on your system.
 
+### Installation
 
-## 📦️ Features
+1. Clone the repository:
+   ```bash
+   git clone https://your-repository-url.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd World-Population-Dashboard
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- VueJs (Composition API) `vuejs3`
-- ViteJs
-- Typescript support
-- Routing via `vue-router`
-- ESLint + Prettier
-- Axios
-- Vuex `vuex4`
-- Scss/Sass support
-- Cypress.io e2e tests
-- More soon…
+### Running the Application
 
+- To start the backend JSON server:
+  ```bash
+  npm run backend
+  ```
+- To run the application in development mode:
+  ```bash
+  npm run dev
+  ```
+- To build the application for production:
+  ```bash
+  npm run build
+  ```
+- To serve the built application:
+  ```bash
+  npm run serve
+  ```
 
+### Linting and Formatting
 
----
+- To lint the code:
+  ```bash
+  npm run lint
+  ```
+- To format the code:
+  ```bash
+  npm run format
+  ```
 
+### Running Tests
 
+- To run end-to-end tests:
+  ```bash
+  npm run e2e:test
+  ```
 
-## 💾 Installation
+## Acknowledgments
 
-#### 👇 Hit in your terminal for setup
-
-```bash
-# npm install
-yarn
+- [Vue.js](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [D3.js](https://d3js.org/)
+- [Axios](https://axios-http.com/)
+- [Cypress](https://www.cypress.io/)
+- [Font Awesome](https://fontawesome.com/)
 ```
-
-
-## 🥑 Usage / Get Started
-
-
-```bash
-# Compiles & hot-reloads for development
-# npm run dev
-yarn dev  
-
-# Or Vite preview
-# npm run serve
-yarn serve 
-
-# Build & minifies for production
-# npm run build
-yarn build 
-
-# Lints & fixes files
-# npm run lint
-yarn lint 
-
-# Prettier & format files
-# npm run format
-yarn format 
-```
-
-#### Goto application
-
-App running at on [localhost](http://localhost:3000)
-
-
----
-
-
-
-## 🧐 Tests
-
-Testing E2E, with integrations, plugins & components:
-
-```bash
-# Install cypress
-yarn e2e:install
-
-# Run E2E tests integrations
-yarn e2e:run # headless
-yarn e2e:open # Open Gui Browser
-
-# Run E2E tests components
-yarn e2e:run-ct # headless
-yarn e2e:open-ct # Open Gui Browser
-```
-
-![Screen Cypress][screen-cypress]
-
-
-
----
-
-
-
-
-## 🐞 Bugs & contributing
-
-**👍 First off, thanks for taking the time to contribute! 👍**
-
-The issue tracker is the preferred channel for bug reports, features requests and submitting pull requests.
-
-**Special thanks to:**
-
-| 🔥                                   |
-|--------------------------------------|
-| [![picture][flo_img]][flo]           |
-| [🧙‍♂][flo] [⌨][flo_co] [🙏][flo_pr] |
-
-
-
-
----
-
-
-## 🍭 Credits
-
-Originally written & currently maintained by [@Sp0ne][vinces-git] © 2021
-
-> </💻> with ❤ by **[@Sp0ne🧙‍♂][vinces]**. Have Fun 🍻
-
-
-
----
-
-
-
-[vinces]: https://vinces.io
-[vinces-git]: https://github.com/Sp0ne
-[screen]: public/images/screen-starter.gif
-[screen-cypress]: public/images/screen-starter-cypress.png
-[docs-github-api]: https://docs.github.com/en/rest/reference/repos#list-repositories-for-a-user
-
-[flo]: https://github.com/floyoops
-[flo_img]: https://avatars.githubusercontent.com/u/2229520?s=60&v=4
-[flo_pr]: https://github.com/Sp0ne/vue3-vite-typescript-starter/pulls?q=is%3Apr+author%3Afloyoops
-[flo_co]: https://github.com/Sp0ne/vue3-vite-typescript-starter/commits?author=floyoops
