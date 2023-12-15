@@ -1,10 +1,10 @@
 {
-  "name": "vue3-vite-typescript-starter",
+  "name": "World Population Dashboard",
   "version": "0.0.1",
   "private": false,
-  "description": "Simple starter template for developing Vue 3 app with some often used features",
+  "description": "Simple world population dashboard with mock json data",
   "scripts": {
-    "server": "json-server fixtures/data.json",
+    "backend": "json-server fixtures/data.json",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
